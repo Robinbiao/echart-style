@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <div ref="chartDom" style="height: 60%;"></div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import echarts from './echarts'
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  mounted () {
+   let instance =  new echarts(this.$refs.chartDom)
+    console.log(instance)
   }
 }
 </script>
